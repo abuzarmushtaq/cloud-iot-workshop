@@ -4,7 +4,11 @@ let express = require('express'),
     io = require('socket.io')(http);
 
 
-app.use('/', express.static(__dirname + '/view'))
+// app.use('/', express.static(__dirname + '/view'))
+
+app.get('/', function (req, res) {
+    res.send('Hello World!')
+})
 http.listen(80);
 console.log('Server Running...');
 
