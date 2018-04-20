@@ -4,7 +4,7 @@ let express = require('express'),
     io = require('socket.io')(http);
 
 
-app.use('/', express.static('view'))
+app.use('/', express.static(__dirname + '/view'))
 http.listen(80);
 console.log('Server Running...');
 
@@ -40,3 +40,5 @@ io.on('connect', (socket) => {
 
 
 });
+
+console.log(__dirname);
